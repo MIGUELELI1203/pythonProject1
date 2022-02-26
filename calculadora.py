@@ -4,13 +4,14 @@ numberone=0
 numberotwo=0
 def messaje_of_welcome():
     print("Bienvenido, aca podra hacer las operaciones matematicas basicas")
+
+def menu():
+    print("escriba el respectivo numero segun la operacion que desee realizar")
     print("1.suma")
     print("2.resta")
     print("3.multiplicacion")
     print("4.division")
-
-def menu():
-    print("escriba el respectivo numero segun la operacion que desee realizar")
+    print("5.teminar la calculadora")
     return int(input())
 def request_numberone():
     print("escriba el primer numero a operar")
@@ -34,19 +35,33 @@ def division(numberone,numbertwo):
      print("la division entre los numeros que ingreso es: ",numberone/numbertwo)
 
 messaje_of_welcome()
-option=menu()
 
-numberone=request_numberone()
-numbertwo=request_numbertwo()
-if option == 1:
-  suma(numberone,numbertwo)
+while option != 5:
+    option = menu()
 
-elif option == 2:
-    resta(numberone,numbertwo)
 
-elif option ==3:
-    multiplicacion(numberone,numbertwo)
-elif option ==4:
-    division(numberone,numbertwo)
-else:
-  print("el valor ingresado no es ninguna de las opciones ,vuelve a intentarlo")
+    if option == 1:
+        numberone = request_numberone()
+        numbertwo = request_numbertwo()
+        suma(numberone, numbertwo)
+
+    elif option == 2:
+        numberone = request_numberone()
+        numbertwo = request_numbertwo()
+        resta(numberone, numbertwo)
+
+    elif option == 3:
+        numberone = request_numberone()
+        numbertwo = request_numbertwo()
+        multiplicacion(numberone, numbertwo)
+    elif option == 4:
+        numberone = request_numberone()
+        numbertwo = request_numbertwo()
+        division(numberone, numbertwo)
+    elif option == 5:
+        print("Hasta pronto")
+    else:
+        print("el valor ingresado no es ninguna de las opciones ,vuelve a intentarlo")
+
+
+
